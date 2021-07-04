@@ -8,23 +8,22 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
   Text,
-  useColorScheme,
   View,
 } from 'react-native';
-import Example from './components/Example'
+import DraggablePoseList from './components/DraggablePoseList'
+import { FAB } from 'react-native-elements';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
       <View style={{ flex: 1 }}>
-          <Text style={{ fontSize: 45 }}>Plan my yoga</Text>
-          <Example />
+          <Text 
+            style={{
+              fontWeight: "bold",
+              fontSize: 32,
+            }}>Plan my yoga</Text>
+          <DraggablePoseList />
+          <FAB title="Add" />
       </View>
   );
 };

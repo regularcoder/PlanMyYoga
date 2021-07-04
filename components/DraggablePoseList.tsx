@@ -4,22 +4,23 @@ import DraggableFlatList, {
   RenderItemParams,
 } from "react-native-draggable-flatlist";
 
-const NUM_ITEMS = 10;
-
-function getColor(i: number) {
-  const multiplier = 255 / (NUM_ITEMS - 1);
-  const colorVal = i * multiplier;
-  return `rgb(${colorVal}, ${Math.abs(128 - colorVal)}, ${255 - colorVal})`;
-}
-
-const exampleData: Item[] = [...Array(20)].map((d, index) => {
-  const backgroundColor = getColor(index);
-  return {
-    key: `item-${backgroundColor}`,
-    label: String(index),
-    backgroundColor
-  };
-});
+const exampleData: Item[] = [
+  {
+    key: `item-0`,
+    label: "Happy baby",
+    backgroundColor: "grey"
+  },
+  {
+    key: `item-1`,
+    label: "Child's pose",
+    backgroundColor: "green"
+  },
+  {
+    key: `item-2`,
+    label: "Fish pose",
+    backgroundColor: "blue"
+  }
+]
 
 type Item = {
   key: string;
@@ -27,7 +28,7 @@ type Item = {
   backgroundColor: string;
 };
 
-function Example() {
+function DraggablePoseList() {
   const [data, setData] = useState(exampleData);
 
   const renderItem = useCallback(
@@ -59,8 +60,7 @@ function Example() {
   );
 
   return (
-    <View style={{ flex: 1 }}>
-      <Text>Test</Text>
+    <View style={{ flex: 1, margin: 20 }}>
       <DraggableFlatList
         data={data}
         renderItem={renderItem}
@@ -71,4 +71,4 @@ function Example() {
   );
 }
 
-export default Example;
+export default DraggablePoseList;
