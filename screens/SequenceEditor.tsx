@@ -20,12 +20,12 @@ const SequenceEditor = () => {
             <View  style={{ flex: 1 }}>
                 <DraggablePoseList />
                 <FAB icon={
-    <Icon
-      name="plus"
-      size={25}
-      color="white"
-    />
-  } size='large' placement='right' />
+                    <Icon
+                    name="plus"
+                    size={25}
+                    color="white"
+                    />
+                } size='large' placement='right' />
             </View>
       </View>
   );
